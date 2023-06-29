@@ -15,7 +15,9 @@ public class ListadoPersonasApp {
             try {
                 salir = ejecutarOperacion(consola, personas);
             } catch (Exception e){
-                System.out.println("Ocurrio un Error: " + e.getMessage());
+                System.out.println("____________________________________________________");
+                System.out.println("***** Ocurrio un Error: " + e.getMessage() + " *****");
+                System.out.println("____________________________________________________");
             }
 
             System.out.println();
@@ -50,22 +52,33 @@ public class ListadoPersonasApp {
                 var persona = new Persona(nombre, tel, email);
                 //LO AGREGAMOS A LA LISTA
                 personas.add(persona);
-                System.out.println("La Lista Tiene: " + personas.size() + " Elementos");
+                System.out.println("_____________________________________________________");
+                System.out.println("***** La Lista Tiene: " + personas.size() + " Elementos *****");
+                System.out.println("_____________________________________________________");
             } // FIN DE CASO 1
 
             case 2 -> { // LISTAR LAS PERSONAS
+                System.out.println();
                 System.out.println("Listado de Personas: ");
                 // MEJORA USANDO LAMBDA Y METODO DE REFERENCIA
                 //personas.forEach((persona) -> System.out.println(persona)); <-- METODO LAMBDA
+                System.out.println("____________________________________________________________________________________");
                 personas.forEach(System.out::println); // <-- METODO DE REFERENCIA
+                System.out.println("____________________________________________________________________________________");
             } // FIN DE CASO 2
 
             case 3 -> { // SALIMOS DE CICLO
-                System.out.println("Hasta Pronto...");
+                System.out.println("___________________________");
+                System.out.println("***** Hasta Pronto... *****");
+                System.out.println("___________________________");
                 salir = true;
             } //FIN DE CASO 3
 
-            default -> System.out.println("Opcion Erronea " + opcion);
+            default -> {
+                    System.out.println("___________________________________");
+                    System.out.println("***** Opcion Erronea " + opcion + " *****");
+                    System.out.println("___________________________________");
+            }
         } // FIN DE SWITCH
         return salir;
 
